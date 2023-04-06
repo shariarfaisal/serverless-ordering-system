@@ -1,0 +1,16 @@
+org: preciousgalliform
+console: true
+service: munchies-order
+frameworkVersion: "3"
+
+provider:
+  name: aws
+  runtime: nodejs14.x
+  region: ap-southeast-1
+  stage: dev
+
+functions:
+  api:
+    handler: handler.handler
+    events:
+      - httpApi: "*"
